@@ -1,0 +1,110 @@
+<style>
+	html, body {
+		height: 100%;
+		margin: 0;
+		overflow-y: hidden;
+	}
+	#number-container {
+		height: 100%;
+		width: 900%;
+		display: flex;
+		background: rgb(51, 82, 110);
+		transition: 0.7s;
+	}
+	.number {
+		height: 100%;
+		width: 100%;
+		font-size: 15rem;
+		font-family: sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		position: relative;
+	}
+	.left, .right {
+		position: absolute;
+		height: 100%;
+		width: 50vw;
+		top: 0;
+		left: 0;
+	}
+	.right {
+		margin-left: 50vw;
+	}
+	::-webkit-scrollbar { 
+		display: none; 
+	}
+</style>
+
+<script>
+	current_margin = 0;
+
+	function scroll_left() {
+		if (current_margin < 0) {
+			current_margin += 1;
+			updateScroll();
+		}
+	}
+
+	function updateScroll() {
+		document.getElementById('number-container').style.margin = '0 0 0 ' + current_margin * 100 + '%';
+	}
+
+
+
+	function scroll_right() {
+		if (current_margin > -8) {
+			current_margin -= 1;
+			updateScroll();
+		}
+	}
+</script>
+
+<div id="number-container">
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		1
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		2
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		3
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		5
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		8
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		13
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		21
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		34
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+	<div class="number">
+		<div class="left" onclick="scroll_left()"></div>
+		55
+		<div class="right" onclick="scroll_right()"></div>
+	</div>
+</div>
